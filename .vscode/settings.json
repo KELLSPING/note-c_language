@@ -8,5 +8,15 @@
         "area.h": "c",
         "stdlib.h": "c",
         "app.h": "c"
-    }
+    },
+    "markdownlint.config": {
+        "default": true,
+        "MD033": {
+            "allowed_elements": [
+                "img",
+                "div",
+                "p"
+            ]
+        }
+    },
 }
