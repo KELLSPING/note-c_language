@@ -1,0 +1,22 @@
+{
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc *.c -o .\\output\\$fileNameWithoutExt && .\\output\\$fileNameWithoutExt",
+        "cpp": "cd $dir && g++ *.cpp -o .\\output\\$fileNameWithoutExt && .\\output\\$fileNameWithoutExt",
+    },
+    "files.associations": {
+        "stdio.h": "c",
+        "area.h": "c",
+        "stdlib.h": "c",
+        "app.h": "c"
+    },
+    "markdownlint.config": {
+        "default": true,
+        "MD033": {
+            "allowed_elements": [
+                "img",
+                "div",
+                "p"
+            ]
+        }
+    },
+}
