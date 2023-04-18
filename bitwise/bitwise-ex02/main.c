@@ -1,3 +1,7 @@
+/**
+ * * 檢查位元
+*/
+
 #include <stdio.h>
 
 int function(int);

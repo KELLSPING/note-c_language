@@ -1,4 +1,9 @@
+/**
+ * * 註解
+*/
+
 #include <stdio.h>
+
 int main()
 {
     int first = 50, second = 60, third;

@@ -1,4 +1,9 @@
+/**
+ * * 優先順序
+*/
+
 #include <stdio.h>
+
 int main()
 {
     int i;
