@@ -10,8 +10,6 @@ int main()
 {
     int *p;
 
-    // int *p = NULL;
-
     fun(p);
     *p = 6;
     printf("%d\n", *p);
