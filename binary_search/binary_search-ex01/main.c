@@ -2,17 +2,17 @@
 
 #define SIZE 10
 
-int binsearch(int *arr, int k, int n)
+int binsearch(int *arr, int searchNum, int arrSize)
 {
-    int left = 0, right = n;
+    int left = 0, right = arrSize;
     while (left <= right)
     {
         int mid = (left + right) / 2;
-        if (arr[mid] > k)
+        if (arr[mid] > searchNum)
         { // 往左半部找
             right = mid - 1;
         }
-        else if (arr[mid] < k)
+        else if (arr[mid] < searchNum)
         { // 往右半部找
             left = mid + 1;
         }

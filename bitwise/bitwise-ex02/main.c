@@ -1,43 +1,36 @@
 /**
- * * 檢查位元
+ * * 給一個unsigned short, 問換算成16進制後四個值是否相同? 若是回傳1,否則回傳0
 */
 
 #include <stdio.h>
+#include <stdint.h>
 
-int function(int);
+int isHexEqaul(uint16_t input){
+    uint16_t hex[4];
+    uint8_t is_eqaul;
 
-int main()
-{
-    int ans = 0;
-    ans = function(0xabcd);
-    printf("ans: %x\n", ans);
+    hex[0] = (input & 0xF000) >> 12;
+    hex[1] = (input & 0x0F00) >> 8;
+    hex[2] = (input & 0x00F0) >> 4;
+    hex[3] = input & 0x000F;
 
-    ans = function(0xfbcd);
-    printf("ans: %x\n", ans);
+    for (int i = 0; i < 4; i++)
+    {
+        printf("%x ", hex[i]);
+    }
+    printf("\n");
 
-    ans = function(0xaccd);
-    printf("ans: %x\n", ans);
-
-    return 0;
+    is_eqaul = ((hex[0] == hex[1]) && (hex[1] == hex[2]) && (hex[2] == hex[3]));
+    return is_eqaul;
 }
 
-int function(int data)
-{
-    if ((data & 0xf000) == 0xa000)
-    {
-        if ((data & 0x0f00) == 0x0b00)
-        {
-            return 0x00cd;
-        }
-        else
-        {
-            printf("display ID incorrect\n");
-            return 0xffff;
-        }
-    }
-    else
-    {
-        printf("checksum incorrect\n");
-        return 0xffff;
-    }
+int main(){
+    uint16_t input = 0xAAAA;
+    uint8_t is_eqaul;
+    printf("input = %x\n", input);
+
+    is_eqaul = isHexEqaul(input);
+    printf("is_eqaul = %d\n", is_eqaul);
+
+    return 0;
 }
